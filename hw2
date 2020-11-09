@@ -1,0 +1,46 @@
+---
+title: "Homework Assignment 2"
+author: "Kendall Cohen and Danielle DeVito "
+date: 'Due Sun Nov 08, 2020 11:59PM'
+output:
+  html_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+
+# Read csv files 
+library(dplyr)
+
+jan <- sample_frac(read.csv("201901-citibike-tripdata.csv"),.01)
+feb <- sample_frac(read.csv("201902-citibike-tripdata.csv"),.01)
+mar <- sample_frac(read.csv("201903-citibike-tripdata.csv"),.01)
+apr <- sample_frac(read.csv("201904-citibike-tripdata.csv"),.01)
+may <- sample_frac(read.csv("201905-citibike-tripdata.csv") ,.01)
+jun <- sample_frac(read.csv("201906-citibike-tripdata.csv"),.01)
+jul <- sample_frac(read.csv("201907-citibike-tripdata.csv"),.01)
+aug <- sample_frac(read.csv("201908-citibike-tripdata.csv"),.01)
+sept <- sample_frac(read.csv("201909-citibike-tripdata.csv"),.01)
+oct <- sample_frac(read.csv("201910-citibike-tripdata.csv"),.01)
+nov <- sample_frac(read.csv("201911-citibike-tripdata.csv"),.01)
+dec <- sample_frac(read.csv("201912-citibike-tripdata.csv"),.01)
+
+
+# Combine monthly data into 2019 data set
+sample_data <- rbind(jan, feb, mar, apr, may, jun, jul, aug, sept, oct, nov, dec)
+
+write.csv(sample_data, "sampleDataFile.csv")
+
+na.omit(combined_files)
+
+
+```
